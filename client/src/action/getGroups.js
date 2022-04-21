@@ -6,7 +6,7 @@ export const getGroups = () => {
             dispatch({type: 'GET_GROUPS', payload: json })
         } catch (e) {
           console.warn('Error: ', e.message)
-          alert('Error: ' + e.message)
+        //   alert('Error: ' + e.message)
         }
     }
 }

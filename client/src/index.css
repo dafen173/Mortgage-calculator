@@ -26,7 +26,7 @@ code {
 }
 
 .edit {
-  background: rgb(165, 79, 9);
+  background: rgb(69, 164, 199);
   border-radius: 20%;
   color: #fff;
   border: none;
@@ -36,7 +36,7 @@ code {
 
 
 header {
-  background-color: rgb(165, 79, 9);
+  background-color: rgb(69, 164, 199);
   padding: 2rem 0;
   text-align: center;
   font-size: xx-large;
@@ -50,7 +50,7 @@ header > a:hover {
   text-decoration: underline;
 }
 footer {
-  background-color: rgb(165, 79, 9);
+  background-color: rgb(69, 164, 199);
   padding: 2rem 0;
   text-align: center;
   margin-top: 2rem;
@@ -84,31 +84,7 @@ footer {
 } */
 
 
-.done {
-  text-decoration: line-through;
+form {
+  padding: 1rem;
 }
 
-.lds-dual-ring {
-  display: inline-block;
-  width: 64px;
-  height: 64px;
-}
-.lds-dual-ring:after {
-  content: ' ';
-  display: block;
-  width: 46px;
-  height: 46px;
-  margin: 1px;
-  border-radius: 50%;
-  border: 5px solid blue;
-  border-color: blue transparent blue transparent;
-  animation: lds-dual-ring 1.2s linear infinite;
-}
-@keyframes lds-dual-ring {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}

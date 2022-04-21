@@ -28,20 +28,31 @@ function UserItem ( {user, index} ) {
     return (
         <li style={styles.li}>
             {/* <span className={classes.join(' ')}>       */}
+
+
+            {/* bankname, interest_rate, max_loan, down_payment, loan_term */}
             <span>            
                 <strong>{index + 1}</strong>
                 &nbsp;
                 &nbsp;
                 &nbsp;
-                {user.username}  
+                {user.bankname}  
                 &nbsp;
                 &nbsp;
                 &nbsp;
-                {user.created}   
+                {user.interest_rate}   
                 &nbsp;
                 &nbsp;
                 &nbsp;
-                {user.groupname} 
+                {user.max_loan}
+                &nbsp;
+                &nbsp;
+                &nbsp;
+                {user.down_payment} 
+                &nbsp;
+                &nbsp;
+                &nbsp;
+                {user.loan_term} 
             </span>   
             <div>
               <EditUser user={user}/>

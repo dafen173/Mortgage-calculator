@@ -5,13 +5,13 @@ export const Layout = () => {
     return (
         <>
             <header>
-                <Link to='/'>Users</Link>
-                <Link to='/groups'>Groups</Link>
+                <Link to='/'>Banks</Link>
+                <Link to='/groups'>Mortgage calculator</Link>
             </header>
 
             <Outlet />
 
-            <footer className="container">Users Managment 2022</footer>
+            <footer className="container">Mortgage calculator 2022</footer>
         </>
         
     )

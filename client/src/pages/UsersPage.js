@@ -6,8 +6,7 @@ export const UsersPage = () => {
 
     return (
         <div className="wrapper">         
-            <h1>Users Page</h1>  
-            <h1>User Management</h1> 
+            <h1>Banks Page</h1>
             <UserList />
             <AddUser />       
         </div> 
