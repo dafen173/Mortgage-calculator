@@ -65,11 +65,16 @@ export const GroupsPage = () => {
         // } 
         
         
-        if (Number(downPay) < selectedBankDownPay ) {
+        // if (Number(downPay) < selectedBankDownPay ) {
+        //     console.log('bad downpay!!!!!!!!!!')
+        //     alert('The entered amount of the first payment is less than the allowable limit of the selected bank!')
+        
+        if (Number(initialLoan) > selectedBank.max_loan) {
+            alert('The entered initial loan amount is greater than the allowable limit for the selected bank!')
+
+        } else if (Number(downPay) < selectedBankDownPay ) {
             console.log('bad downpay!!!!!!!!!!')
             alert('The entered amount of the first payment is less than the allowable limit of the selected bank!')
-        } else if (Number(initialLoan) > selectedBank.max_loan) {
-            alert('The entered initial loan amount is greater than the allowable limit for the selected bank!')
         } else if ( Number(initialLoan) > 0 
                     && Number(downPay) > 0 
                     && Number(downPay) >= selectedBankDownPay
@@ -81,9 +86,6 @@ export const GroupsPage = () => {
             console.log('bad!!!!!!!!!!')
             alert('Enter the correct amount in a numerical value')
         }
-
-        
-
     }
 
 
@@ -102,14 +104,14 @@ export const GroupsPage = () => {
                     )}
                 </select>                     */}
                 <label>
-                    Initial loan:
+                    Initial loan, $
                     <br/>
                     <input value={initialLoan} onChange={ e => setInitialLoan(e.target.value)} />
                 </label>
                 <br/>
                 <br/>
                 <label>
-                    Down payment:
+                    Down payment, $
                     <br/>
                     <input value={downPay} onChange={ e => setDownPay(e.target.value)} />
                 </label>

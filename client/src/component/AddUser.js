@@ -37,18 +37,24 @@ export const AddUser = () => {
         // console.log(selectedGroup.id)
         
         //dispatchUsers(addUsers(userValue, groupValue, selectedGroup.id))
-        dispatchUsers(addUsers(bankName, interestRate, maxLoan, downPayment, termLoan))
-        
-        
-        //setUserValue('')
-        //console.log('groupValue is ' + groupValue)
-
-        setBankName('')
-        setInterestRate('')
-        setMaxLoan('')
-        setDownPayment('')
-        setTermLoan('')
-
+        // if (interestRate > 100) {
+        //     alert('Invalid value in Interest Rate field!')
+        // }
+        if ( Number(interestRate) > 0 
+        && Number(maxLoan) > 0 
+        && Number(downPayment) > 0
+        && Number(termLoan) > 0
+        ) {
+            dispatchUsers(addUsers(bankName, interestRate, maxLoan, downPayment, termLoan))
+            setBankName('')
+            setInterestRate('')
+            setMaxLoan('')
+            setDownPayment('')
+            setTermLoan('')
+        } else {
+        console.log('bad!!!!!!!!!!')
+        alert('Enter the correct amount in a numerical value')
+        }  
     }
 
     return (
@@ -69,28 +75,28 @@ export const AddUser = () => {
                 <br/>
                 <br/>
                 <label>
-                    Interest rate
+                    Interest rate, %
                     <br/>
                     <input value={interestRate} onChange={ e => setInterestRate(e.target.value)} />
                 </label>
                 <br/>
                 <br/>
                 <label>
-                    Maximum loan
+                    Maximum loan, $
                     <br/>
                     <input value={maxLoan} onChange={ e => setMaxLoan(e.target.value)} />
                 </label>
                 <br/>
                 <br/>
                 <label>
-                    Minimum down payment
+                    Minimum down payment, $
                     <br/>
                     <input value={downPayment} onChange={ e => setDownPayment(e.target.value)} />
                 </label>
                 <br/>
                 <br/>
                 <label>
-                    Loan term
+                    Loan term, months
                     <br/>
                     <input value={termLoan} onChange={ e => setTermLoan(e.target.value)} />
                 </label>

@@ -40,19 +40,19 @@ function UserItem ( {user, index} ) {
                 &nbsp;
                 &nbsp;
                 &nbsp;
-                {user.interest_rate}   
+                {user.interest_rate + '%'} 
                 &nbsp;
                 &nbsp;
                 &nbsp;
-                {user.max_loan}
+                {'$' + user.max_loan}
                 &nbsp;
                 &nbsp;
                 &nbsp;
-                {user.down_payment} 
+                {user.down_payment + '%'} 
                 &nbsp;
                 &nbsp;
                 &nbsp;
-                {user.loan_term} 
+                {user.loan_term + ' months'} 
             </span>   
             <div>
               <EditUser user={user}/>

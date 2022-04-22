@@ -38,16 +38,28 @@ class UserController {
     async getUser(req, res) {
         
     }
+    // async updateUser(req, res) {
+    //     const {username, groupname, id} = req.body
+    //     const user = await db.query(
+    //         'UPDATE users set username = $1, groupname = $2 where id = $3 RETURNING *',
+    //         [username, groupname, id]
+    //     )
+    //     //res.json(user.rows)
+    //     const users = await db.query(`SELECT * FROM users ORDER BY id ASC`)
+    //     res.json(users.rows)
+    // }
     async updateUser(req, res) {
-        const {username, groupname, id} = req.body
+        const {bankname, interest_rate, max_loan, down_payment, loan_term, id} = req.body
         const user = await db.query(
-            'UPDATE users set username = $1, groupname = $2 where id = $3 RETURNING *',
-            [username, groupname, id]
+            'UPDATE banks set bankname = $1, interest_rate = $2, max_loan = $3, down_payment = $4, loan_term = $5 where id = $6 RETURNING *',
+            [bankname, interest_rate, max_loan, down_payment, loan_term, id]
         )
         //res.json(user.rows)
-        const users = await db.query(`SELECT * FROM users ORDER BY id ASC`)
+        const users = await db.query(`SELECT * FROM banks ORDER BY id ASC`)
         res.json(users.rows)
     }
+
+
 
     async updateUserGroupname(req, res) {
         const {groupname, group_id} = req.body
