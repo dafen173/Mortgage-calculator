@@ -141,7 +141,7 @@ export const GroupsPage = () => {
 
 
             {res ? (
-            <h1>{'your monthly payment: ' + res}</h1>  
+            <h1>{'your monthly payment: $' + res}</h1>  
             ) : (
             <h1>No result!!!</h1>  
             )}

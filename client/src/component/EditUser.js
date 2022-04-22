@@ -22,11 +22,26 @@ export const EditUser = (props) => {
 
   const editHandler = (e) => {
       e.preventDefault()
-      dispatch(editUser(bankName, interestRate, maxLoan, downPayment, termLoan, editId))
 
-      console.log(bankName, interestRate, maxLoan, downPayment, termLoan, editId)
 
-      setIsOpen(false)
+      if ( Number(interestRate) > 0 
+      && Number(maxLoan) > 0 
+      && Number(downPayment) > 0
+      && Number(termLoan) > 0
+      ) {
+        dispatch(editUser(bankName, interestRate, maxLoan, downPayment, termLoan, editId))
+        setIsOpen(false)
+      } else {
+      console.log('bad!!!!!!!!!!')
+      alert('Enter the correct amount in a numerical value')
+      }  
+
+
+      // dispatch(editUser(bankName, interestRate, maxLoan, downPayment, termLoan, editId))
+
+      // console.log(bankName, interestRate, maxLoan, downPayment, termLoan, editId)
+
+      
   }
 
 
