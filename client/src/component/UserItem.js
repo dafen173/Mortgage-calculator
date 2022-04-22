@@ -20,17 +20,8 @@ const styles = {
 
 function UserItem ( {user, index} ) {
 
-    // const classes = []
-    // if (user.completed) {
-    //   classes.push('done')
-    // }
-
     return (
         <li style={styles.li}>
-            {/* <span className={classes.join(' ')}>       */}
-
-
-            {/* bankname, interest_rate, max_loan, down_payment, loan_term */}
             <span>            
                 <strong>{index + 1}</strong>
                 &nbsp;
@@ -63,11 +54,9 @@ function UserItem ( {user, index} ) {
 }
 
 
-
 UserItem.propTypes = {
     user: PropTypes.object.isRequired,
     index: PropTypes.number
-    //onChange: PropTypes.func.isRequired
 } 
 
 export default UserItem

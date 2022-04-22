@@ -34,7 +34,6 @@ code {
 }
 
 
-
 header {
   background-color: rgb(69, 164, 199);
   padding: 2rem 0;
@@ -77,13 +76,6 @@ footer {
   background: #fff;
   height: auto;
 }
-
-
-
-/* .divEdit {
-  
-} */
-
 
 form {
   padding: 1rem;

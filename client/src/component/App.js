@@ -11,7 +11,7 @@ function App() {
           <Routes>
             <Route path='/' element={<Layout />}>
               <Route index element={<UsersPage />} />
-              <Route path='groups' element={<GroupsPage />} />
+              <Route path='mortgage-calculator' element={<GroupsPage />} />
               <Route path='*' element={<PageNotFound />} />
             </Route>        
           </Routes>

@@ -6,14 +6,13 @@ export const Layout = () => {
         <>
             <header>
                 <Link to='/'>Banks</Link>
-                <Link to='/groups'>Mortgage calculator</Link>
+                <Link to='/mortgage-calculator'>Mortgage calculator</Link>
             </header>
 
             <Outlet />
 
             <footer className="container">Mortgage calculator 2022</footer>
-        </>
-        
+        </>       
     )
 }
 

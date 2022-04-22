@@ -1,7 +1,7 @@
 export const addUsers = (bankName, interestRate, maxLoan, downPayment, termLoan) => {
     return async dispatch => {
         try {
-            const response = await fetch('http://localhost:8080/api/manage-user', {
+            const response = await fetch('http://localhost:8080/api/banks', {
                     method: 'POST',      
                     body: JSON.stringify({
                     bankname: bankName, 

@@ -1,7 +1,7 @@
 export const removeUser = (id) => {
     return async dispatch => {
         try {
-            const response = await fetch(`http://localhost:8080/api/manage-user/${id}`, {
+            const response = await fetch(`http://localhost:8080/api/banks/${id}`, {
                 method: 'DELETE'
             }) 
             const json = await response.json()

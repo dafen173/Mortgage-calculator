@@ -2,7 +2,7 @@ const express = require('express')
 //const userRouter = require('./routes/user.routes') 
 //const postRouter = require('./routes/post.routes')
 const manageUserRouter = require('./routes/manage-users.routes') 
-const manageGroupRouter = require('./routes/manage-groups.routes') 
+//const manageGroupRouter = require('./routes/manage-groups.routes') 
 
 
 const app = express()
@@ -39,7 +39,7 @@ app.get('/', (req, res) => {
 
 
 app.use('/api', manageUserRouter)
-app.use('/api', manageGroupRouter)
+//app.use('/api', manageGroupRouter)
 
 const PORT = process.env.PORT || 8080
 app.listen(PORT, () => console.log(`Server has been started on port ${PORT}...`))

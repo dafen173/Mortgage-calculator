@@ -20,11 +20,12 @@ const DeleteUser = (props) => {
   )     
 }
     
-
 DeleteUser.propTypes = {
   //props: PropTypes.object.isRequired
   props: PropTypes.object
 } 
+
+
 
 export default DeleteUser
 

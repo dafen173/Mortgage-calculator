@@ -1,16 +1,13 @@
 import React from 'react'
 import {useState} from "react"
-import { useDispatch, useSelector } from "react-redux"
+import { useDispatch } from "react-redux"
 import PropTypes from "prop-types"
 import {editUser} from '../action/editUser'
 
 
 export const EditUser = (props) => {
-  const groupNameSelector = useSelector(state => state.groups.groupitems)
 
   const [isOpen, setIsOpen] = useState(false)
-  // const [userValue, setUserValue] = useState(props.user.username)
-  // const [groupValue, setGroupValue] = useState(props.user.groupname)
   const [bankName, setBankName] = useState(props.user.bankname)
   const [interestRate, setInterestRate] = useState(props.user.interest_rate)
   const [maxLoan, setMaxLoan] = useState(props.user.max_loan)
@@ -23,7 +20,6 @@ export const EditUser = (props) => {
   const editHandler = (e) => {
       e.preventDefault()
 
-
       if ( Number(interestRate) > 0 
       && Number(maxLoan) > 0 
       && Number(downPayment) > 0
@@ -32,16 +28,9 @@ export const EditUser = (props) => {
         dispatch(editUser(bankName, interestRate, maxLoan, downPayment, termLoan, editId))
         setIsOpen(false)
       } else {
-      console.log('bad!!!!!!!!!!')
+      console.log('error!!!!!!!!!!')
       alert('Enter the correct amount in a numerical value')
-      }  
-
-
-      // dispatch(editUser(bankName, interestRate, maxLoan, downPayment, termLoan, editId))
-
-      // console.log(bankName, interestRate, maxLoan, downPayment, termLoan, editId)
-
-      
+      }   
   }
 
 
@@ -55,15 +44,6 @@ return (
         <div className='modal'>
           <div className='modal-body'>
             <h1>Edit Bank</h1>       
-            {/* <form onSubmit={editHandler}> 
-                <input value={userValue} onChange={ e => setUserValue(e.target.value)} />
-                <select value={groupValue} onChange={ e => setGroupValue(e.target.value)}>                        
-                    {groupNameSelector.map( item => 
-                        <option key={item.id} value={item.groupname}>{item.groupname}</option>                                                   
-                    )}                   
-                </select>
-                <button type="submit">Edit User</button>            
-            </form> */}
             <form onSubmit={editHandler}> 
                 <label>
                     Bank name
@@ -73,28 +53,28 @@ return (
                 <br/>
                 <br/> 
                 <label>
-                    Interest rate
+                    Interest rate, %
                     <br/>
                     <input value={interestRate} onChange={ e => setInterestRate(e.target.value)} />
                 </label>
                 <br/>
                 <br/> 
                 <label>
-                    Maximum loan
+                    Maximum loan, $
                     <br/>
                     <input value={maxLoan} onChange={ e => setMaxLoan(e.target.value)} />
                 </label>
                 <br/>
                 <br/> 
                 <label>
-                    Minimum down payment
+                    Minimum down payment, $
                     <br/>
                     <input value={downPayment} onChange={ e => setDownPayment(e.target.value)} />
                 </label>
                 <br/>
                 <br/> 
                 <label>
-                    Loan term
+                    Loan term, months
                     <br/>
                     <input value={termLoan} onChange={ e => setTermLoan(e.target.value)} />
                 </label>
@@ -120,4 +100,3 @@ EditUser.propTypes = {
 } 
 
 
-//export default EditUser

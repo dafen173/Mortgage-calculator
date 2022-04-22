@@ -1,45 +1,20 @@
-import React, {useState, useEffect, useLayoutEffect} from "react"
-import { useDispatch, useSelector } from "react-redux"
-import { addUsers } from "../action/addUsers"
-import { getGroups } from "../action/getGroups"
+import React, {useState} from "react"
+import {useDispatch} from "react-redux"
+import {addUsers} from "../action/addUsers"
 
 
 export const AddUser = () => {
-    
-    // const dispatchGroups = useDispatch()
-    // useEffect(() => {
-    //     dispatchGroups(getGroups())
-    // }, [])
-    
-    const groupNameSelector = useSelector(state => state.groups.groupitems)
- 
-    // const [userValue, setUserValue] = useState('')
-    // const [groupValue, setGroupValue] = useState('')
-
     const [bankName, setBankName] = useState('')
     const [interestRate, setInterestRate] = useState('')
     const [maxLoan, setMaxLoan] = useState('')
     const [downPayment, setDownPayment] = useState('')
-    const [termLoan, setTermLoan] = useState('')
-
-    // useEffect(() => {
-    //     if (groupNameSelector.length)
-    //     setGroupValue(groupNameSelector[0].groupname)
-    //  }, [groupNameSelector])
-    
+    const [termLoan, setTermLoan] = useState('')   
 
     const dispatchUsers = useDispatch()
 
     const callBackHandler = (event) => {
         event.preventDefault()
 
-        //const selectedGroup = groupNameSelector.find(el => el.groupname === groupValue)
-        // console.log(selectedGroup.id)
-        
-        //dispatchUsers(addUsers(userValue, groupValue, selectedGroup.id))
-        // if (interestRate > 100) {
-        //     alert('Invalid value in Interest Rate field!')
-        // }
         if ( Number(interestRate) > 0 
         && Number(maxLoan) > 0 
         && Number(downPayment) > 0
@@ -52,21 +27,14 @@ export const AddUser = () => {
             setDownPayment('')
             setTermLoan('')
         } else {
-        console.log('bad!!!!!!!!!!')
+        console.log('error!!!!!!!!!!')
         alert('Enter the correct amount in a numerical value')
         }  
     }
 
     return (
         <>           
-            <form onSubmit={callBackHandler}> 
-                {/* <input value={userValue} onChange={ e => setUserValue(e.target.value)} /> */}
-                {/* <select value={groupValue} onChange={ e => setGroupValue(e.target.value)}>
-                    {groupNameSelector.map( item => 
-                        <option key={item.id} value={item.groupname}>{item.groupname}</option> 
-                        // <option key={item.id} value={item.groupname} data={item.id}>{item.groupname}</option>                                                 
-                    )}
-                </select>                     */}
+            <form onSubmit={callBackHandler}>               
                 <label>
                     Bank name
                     <br/>
